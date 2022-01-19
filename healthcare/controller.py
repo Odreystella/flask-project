@@ -127,4 +127,4 @@ class ConceptInfoView(Resource):
         if not datas:
             return {"message": "NO CONCEPT INFO"}, 404
 
-        return datas
+        return {'result' : datas }, 200
