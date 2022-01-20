@@ -100,7 +100,7 @@ class StatisticsView(Resource):
             }
         }
 
-        return {'result' : result }, 200
+        return {"result" : result }, 200
 
 
 class ConceptInfoView(Resource):
@@ -108,8 +108,8 @@ class ConceptInfoView(Resource):
         """
         각 테이블에 사용된 concept_id들의 정보를 제공합니다.
         """
-        PAGE   = int(request.args.get("page", 1))
-        LIMIT  = int(request.args.get("limit", 20))
+        PAGE = int(request.args.get("page", 1))
+        LIMIT = int(request.args.get("limit", 20))
         OFFSET = (PAGE - 1) * LIMIT
 
         concept_id = request.args.get("id")
@@ -127,4 +127,4 @@ class ConceptInfoView(Resource):
         if not datas:
             return {"message": "NO CONCEPT INFO"}, 404
 
-        return {'result' : datas }, 200
+        return {"result" : datas }, 200
